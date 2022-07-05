@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womazing</title>
+    <meta name="description" content="Магазин женской одежды">
+    <meta name="keywords" content="магазин, одежда,интернет-магазин, женщины, мода, покупки, стиль">
+    <!-- OG Tags -->
+    <meta property="og:title" content="Womazing">
+    <meta property="og:description" content="Магазин женской одежд">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://sitename.ru/img/preview.jpg">
+    <meta property="og:site_name" content="Womazing">
+    <!-- Styling -->
+    <meta name="theme-color" content="#6E9C9F">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg align-items-center scrolling-navbar" id="navbar">
+        <div class="container-fluid container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Womazing">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav m-auto" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="shop.html">Магазин</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">О бренде</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="connect d-flex flex-column flex-lg-row">
+                    <div class="phone d-flex align-items-start">
+                        <button class="phone__btn" type="button">
+                        </button>
+                        <div id="modal-wrapper">
+                            <div id="overlay"></div>
+                            <div class="modals active" id="modal-window">
+                                <div class="btn-wrapper">
+                                    <button id="btn-close"></button>
+                                </div>
+                                <h3 class="modal-title">Заказать обратный звонок</h3>
+                                <form action="php/mail.php" class="form" id="feedbackForm" method="get" novalidate>
+                                    <input type="text" class="form__input" placeholder="Имя" name="firstName"
+                                        required="">
+                                    <input type="email" class="form__input" placeholder="E-mail" name="email"
+                                        required="">
+                                    <input type="tel" class="form__input" placeholder="Телефон" name="telephone"
+                                        required="">
+                                    <button class="form__btn filled-btn btn" data-submit>Заказать звонок</button>
+                                </form>
+                            </div>
+                            <div class="modals" id="modal-window-feedback">
+                                <h3 class="modal-title">Отлично! Мы скоро вам перезвоним.</h3>
+                                <button id="btn-feedback-close" class="ghost-btn-close ghost-btn">Закрыть</button>
+
+                            </div>
+                        </div>
+                        <a class="phone__link base-link" href="tel:+7-495-823-54-12">+7 (495) 823-54-12</a>
+                    </div>
+                    <div class="cart">
+                        <a class="cart__link" href="cart.html">
+                            <img class="cart__img" src="img/shopping-bags.svg" alt="Cart icon">
+                        </a>
+                        <span class="cart__items-number">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="shop-title commom-title title">Магазин</h1>
+                    <ul class="breadcrumps d-none d-lg-flex">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><span class="gray">Магазин</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="shop-buttons">
+                        <!-- В  JS НУЖНО ДОБАВИТЬ АКТИВНОЙ КНОПКЕ КЛАСС ACTIVE-BLACK И КЛАСС SWITCH-ON (для ховера)
+                            Убрать actve-black с предыдущей кнопки и добавить текущей
+                            Убрать switch-on с текущей кнопки и добавить предыдущей
+                        -->
+                        <button class="switcher" type="button">Все</button>
+                        <button class="switcher" type="button">Пальто</button>
+                        <button class="switcher" type="button">Свитшоты</button>
+                        <button class="switcher" type="button">Кардиганы</button>
+                        <button class="switcher" type="button">Толстовки</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <span class="gray">Показано: 9 из 12 товаров</span>
+                </div>
+            </div>
+            <div class="shop-wrapper">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-end">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_first.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Футболка USA</h4>
+                                <span class="price"><s>$229</s></span>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-start">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_second.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Купальник Glow</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card-wrapper">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_third.jpg" alt="Women in t-shirt" class="mx-auto mx-lg-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Свитшот Sweet Shot</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-wrapper">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-end">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_first.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Футболка USA</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-start">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_second.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Купальник Glow</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card-wrapper">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_third.jpg" alt="Women in t-shirt" class="mx-auto mx-lg-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Свитшот Sweet Shot</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-wrapper">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-end">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_first.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Футболка USA</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card-wrapper m-sm-0 float-md-start">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_second.jpg" alt="Women in t-shirt" class="mx-auto mx-md-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Купальник Glow</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card-wrapper">
+                            <a href="item.html" class="offer-img d-block">
+                                <img src="img/shop_third.jpg" alt="Women in t-shirt" class="mx-auto mx-lg-0">
+                            </a>
+                            <div class="item-wrapper">
+                                <h4 class="offer-subtitle subitle">Свитшот Sweet Shot</h4>
+                                <span class="price">$129</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="gray">Показано: 9 из 12 товаров</span>
+                </div>
+                <div class="col-12">
+                    <div class="pagination-buttons d-flex justify-content-center align-items-center">
+                        <button class="pagination first-page active-black" type="button">1</button>
+                        <button class="pagination second-page" type="button">2</button>
+                        <button class="pagination-arrow" type="button">
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 col-lg-3">
+                    <a href="#" class="logo">
+                        <img src="img/logo.png" alt="Womazing">
+                    </a>
+                    <div class="information d-flex flex-column">
+                        <span class="copyright">&#169; Все права защищены</span>
+                        <a href="https://policies.google.com/privacy?hl=ru" target="_blank"
+                            class="policy base-link">Политика
+                            конфиденциальности</a>
+                        <a href="https://kostis.ru/publichnaya_oferta/" target="_blank"
+                            class="p-offer base-link">Публичная оферта</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 col-lg-6">
+                    <nav class="footer-nav">
+                        <ul
+                            class="navbar-nav footer-navbar d-flex flex-column flex-sm-row justify-content-end justify-content-md-start">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="shop.html">Магазин</a>
+                                <ul class="submenu">
+                                    <li class="submenu__item base-link"><a href="">Пальто</a></li>
+                                    <li class="submenu__item base-link"><a href="">Свитшоты</a></li>
+                                    <li class="submenu__item base-link"><a href="">Кардиганы</a></li>
+                                    <li class="submenu__item base-link"><a href="">Толстовки</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="about.html">О бренде</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="contacts.html">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-12 col-md-12 align-items-md-start col-lg-3 d-flex flex-column align-items-lg-end">
+                    <div class="contact-links d-flex flex-column">
+                        <a class="phone__link base-link" href="tel:+7-495-823-54-12">+7 (495) 823-54-12</a>
+                        <a class="email__link base-link" href="mailto:hello@womazing.com">hello@womazing.com</a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.instagram.com/" target="_blank" class="social__link" id="instagram">
+                            <img src="img/instagram.svg" alt="Instagram icon" class="social__img">
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="social__link" id="facebook">
+                            <img src="img/facebook.svg" alt="Facebook icon" class="social__img">
+                        </a>
+                        <a href="https://twitter.com/?lang=ru" target="_blank" class="social__link" id="twitter">
+                            <img src="img/twitter.svg" alt="Twitter icon" class="social__img">
+                        </a>
+                    </div>
+                    <a href="https://www.visa.com.ru/visa-russia-notice.html" target="_blank" class="payment">
+                        <img src="img/visa-mastercard.png" alt="Online payment" class="payment__img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Jquery, Swiper, Bootstrap -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+
+    <!-- main JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
